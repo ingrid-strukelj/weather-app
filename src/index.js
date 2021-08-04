@@ -53,6 +53,28 @@ function displayTemp(response) {
   let tempC = document.querySelector("#temperature");
   tempC.innerHTML = temp;
 
+  //Weather description
+  let weatherDescription = document.querySelector(".weather-description");
+  weatherDescription.innerHTML = response.data.weather[0].main;
+
+  //Display Min and Max temperature
+  let tempMin = Math.round(response.data.main.temp_min);
+  let tempMax = Math.round(response.data.main.temp_max);
+  let tempMinimal = document.querySelector(".lowest-temp");
+  let tempMaximal = document.querySelector(".highest-temp");
+  tempMinimal.innerHTML = `${tempMin}°C`;
+  tempMaximal.innerHTML = `${tempMax}°C`;
+
+  //Display humidity
+  let humidity = Math.round(response.data.main.humidity);
+  let levelHumidity = document.querySelector(".humidity");
+  levelHumidity.innerHTML = `Humidity: ${humidity}%`;
+
+  //Display wind speed
+  let wind = response.data.wind.speed;
+  let windSpeed = document.querySelector(".wind");
+  windSpeed.innerHTML = `Wind: ${wind} km/h`;
+
   let city = document.querySelector("#chosen-city");
   city.innerHTML = response.data.name;
 }

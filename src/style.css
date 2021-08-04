@@ -52,3 +52,10 @@ p.forecast-temp {
 .temp-units {
   font-size: 34px;
 }
+
+.highest-lowest-temperature,
+.lowest-temp,
+.highest-temp {
+  display: inline;
+  margin: 0;
+}
