@@ -59,3 +59,7 @@ p.forecast-temp {
   display: inline;
   margin: 0;
 }
+
+.footer {
+  padding: 10px 0;
+}
