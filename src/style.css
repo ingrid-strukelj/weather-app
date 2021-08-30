@@ -58,6 +58,10 @@ p.forecast-temp {
   text-decoration: none;
 }
 
+img {
+  margin: 60px;
+}
+
 .highest-lowest-temperature,
 .lowest-temp,
 .highest-temp {
