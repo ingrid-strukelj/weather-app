@@ -53,6 +53,11 @@ p.forecast-temp {
   font-size: 34px;
 }
 
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
+}
+
 .highest-lowest-temperature,
 .lowest-temp,
 .highest-temp {

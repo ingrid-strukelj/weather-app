@@ -75,6 +75,8 @@ function displayTemp(response) {
   let windSpeed = document.querySelector(".wind");
   windSpeed.innerHTML = `Wind: ${wind} km/h`;
 
+  celsiusTemperature = response.data.main.temp;
+
   let city = document.querySelector("#chosen-city");
   city.innerHTML = response.data.name;
 }
@@ -109,3 +111,24 @@ function exactButton(event) {
 
 let exact = document.querySelector("#exact-location");
 exact.addEventListener("click", exactButton);
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
